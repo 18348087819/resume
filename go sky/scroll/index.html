@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery-非响应式轮播图</title>
+    <style type="text/css">
+        *{ margin: 0;padding: 0;}
+        ul,li{ list-style: none;}
+        .banner{ width: 800px; height: 400px; margin: 20px auto; position: relative; overflow: hidden;}
+        .img{ width: 800px; height: 400px; margin: 20px auto; position: relative; overflow: hidden;}
+        .img1{ width: 800px; height: 400px; margin: 20px auto; position: relative; overflow: hidden;}
+        .img2{ width: 800px; height: 400px; margin: 20px auto; position: relative; overflow: hidden;}
+        .img3{ width: 800px; height: 400px; margin: 20px auto; position: relative; overflow: hidden;}
+    </style>
+</head>
+<body>
+    <div class="banner"></div>
+    <div class="img"></div>
+    <div class="img1"></div>
+    <div class="img2"></div>
+    <div class="img3"></div>
+
+</body>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scroll.js"></script>
+    <script type="text/javascript">
+        /*
+        *   敬告：此轮播图是仿淘宝"非响应式"轮播图，本人自娱自乐而写。
+        *
+        *   就是你，这是写给你的，好好看注释，再理解不了。。。。就XO。。。。
+        *
+        *   先引入jquery，再引入scroll.js，之后创建轮播图如：var _banner = Responsive(father, url, btn, btnLi, active, btnSpan)，调用方法 _banner.make()。
+        *
+        *   参数列表：Responsive(
+                     "轮波图的位置(必填:轮波图的显示宽度与父元素同宽,显示高度与父元素同高,具体的CSS样式在上面第9行代码,只要别忘了position: relative; overflow: hidden;)",
+                     "_url：轮波图的显示信息(包括分页按钮序号,提示信息,超链接.href,图片.src)",
+                     "_btn：分页器CSS样式",
+                     "_btnLi：分页按钮CSS样式",
+                     "_active：分页按钮选中CSS样式",
+                     "_btnP：前进/后退按钮CSS样式",
+                     "time：图片切换时间"
+                     );
+
+        *   CSS样式随意改。
+        *
+        * */
+        $(document).ready(function() {
+            /*--------轮波图的显示信息(包括提示信息,超链接.href,图片.src)--------*/
+            var _url = {
+                "1": [//分页按钮序号
+                    "title1",//提示信息
+                    "javascript:void(0)",//超链接.href
+                    "images/img1.jpg"//图片.src
+                ],
+                "2": [
+                    "title2",
+                    "javascript:void(0)",
+                    "images/img2.jpg"
+                ],
+                "3": [
+                    "title3",
+                    "javascript:void(0)",
+                    "images/img3.jpg"
+                ],
+                "4": [
+                    "title4",
+                    "javascript:void(0)",
+                    "images/img4.jpg"
+                ]
+            };
+            /*--------以下为CSS样式(想怎么改就怎么改,开心就好,别忘了20分钟的约定!)--------*/
+            var _btn = {
+                //display: "none",  //取消注释分页器隐藏。
+                position: "absolute",
+                left: 0,
+                right: 0,
+                bottom: "10px",
+                margin: "auto",
+                textAlign: "center"
+            };
+            var _btnLi = {
+                width: "24px",
+                height: "24px",
+                font: "16px/24px Arial",
+                //fontSize: 0,  //取消注释分页序号隐藏。
+                color: "#080",
+                background: "#fff",
+                borderRadius: "50%",
+                margin: "0 4px",
+                cursor: "pointer",
+                display: "inline-block"
+            };
+            var _active = {
+                color: "#fff",
+                background: "#f40"
+            };
+            var _btnP = {
+                //display: "none",  //取消注释前进/后退按钮隐藏。
+                width: "50px",
+                height: "100px",
+                color: "#fff",
+                fontSize: "64px",
+                lineHeight: "100px",
+                fontFamily: "宋体",
+                textAlign: "center",
+                opacity: .6,
+                cursor: "pointer",
+                position: "absolute",
+                top: "50%",
+                marginTop: "-50px"
+            };
+            /*Responsive(
+                 "轮波图的位置(必填:轮波图的显示宽度与父元素同宽,显示高度与父元素同高,具体的CSS样式在上面第9行代码,只要别忘了position: relative; overflow: hidden;)",
+                 "_url：轮波图的显示信息(包括分页按钮序号,提示信息,超链接.href,图片.src)",
+                 "_btn：分页器CSS样式",
+                 "_btnLi：分页按钮CSS样式",
+                 "_active：分页按钮选中CSS样式",
+                 "_btnP：前进/后退按钮CSS样式",
+                 "time：图片切换时间"
+             );*/
+            var _pic = new Responsive($(".banner"), _url, _btn, _btnLi, _active, _btnP, 2000);
+            _pic.make();
+            var _img = new Responsive($(".img"), _url, _btn, _btnLi, _active, _btnP, 1000);
+            _img.make();
+            var _img1 = new Responsive($(".img1"), _url, _btn, _btnLi, _active, _btnP, 3000);
+            _img1.make();
+            var _img2 = new Responsive($(".img2"), _url, _btn, _btnLi, _active, _btnP, 1000);
+            _img2.make();
+            var _img3 = new Responsive($(".img3"), _url, _btn, _btnLi, _active, _btnP, 800);
+            _img3.make();
+
+        });
+
+    </script>
+</html>

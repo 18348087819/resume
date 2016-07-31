@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CV2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="swiper/swiper.min.css">
+
+    <!-- Demo styles -->
+    <style>
+        html, body {
+            position: relative;
+
+        }
+        body {
+            background: url("img/79f179eec49f208ccc19a9e7908ae792.png");
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color:#000;
+            margin: 0;
+            height:100vh;
+            padding: 0;
+        }
+        p,ul,img{
+            margin: 0;padding:0;
+        }
+
+        .swiper-container{
+            height: 100%;
+        }
+        .swiper-container .swiper-slide{
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            transition: all 400ms;
+        }
+        #music{
+            position: relative;position:absolute;left: 80vw;top: 12vh;
+            background: deepskyblue;width:80px;height:80px;border-radius: 40px;z-index: 1000;overflow: hidden;
+        }
+        #music img{
+            width:80px;height:80px;
+            transform-origin: center center;
+            animation: rotate 5s linear 0s infinite
+        }
+        @keyframes rotate {
+            from{
+                transform:  rotate(0deg);
+            }
+            to{
+                transform:  rotate(360deg);
+            }
+        }
+        #music .mover{
+            position: absolute;left:10px;top:18px;width:60px;height:60px;display: flex;flex-flow: row nowrap;justify-content: space-around;
+        }
+        #music .mover p{
+            width:8px;height:50px;background: lightgreen;border-radius: 4px;
+            transform-origin: center center;
+            animation:scale 1s linear 0s infinite;
+        }
+        @keyframes scale {
+            0%{
+                height:50px
+            }
+            50%{
+                height:25px
+            }
+            100%{
+                height:50px
+            }
+        }
+        .pic1{
+            width:100%;height:100%;background: url("img/slide11.png");
+            background-size: cover;position: relative;
+        }
+        .photo{
+            position: absolute;top:48vh;left:60vw;overflow: hidden;
+            width:150px;height:150px;background: #fff;border-radius: 75px;
+        }
+        .mes{
+            position: absolute;left: 25vw;top:40vh;
+            width:400px;height:230px;display: flex;flex-flow: column;justify-content: space-around;
+        }
+        .mes p{
+            width:400px;height:50px;/*background:#fff;*/line-height: 60px;
+        }
+       /* 顶部导航*/
+        .nav{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 44px;
+            position: fixed;
+            z-index: 100;
+            list-style: none;
+            text-align: center;
+            line-height: 44px;
+            background: rgba(255,255,255,.6);
+        }
+        .nav li{
+            list-style: none;
+            display: inline-block;
+            padding: 0 20px;
+        }
+        .nav li a{
+            cursor: pointer;
+            transition: all 400ms;
+        }
+        .nav li a:hover{
+            color: #fff;
+        }
+        .nav .active a{
+            color: #fff;
+        }
+        .toTop{
+            width: 64px;
+            height: 64px;
+            line-height: 64px;
+            text-align: center;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            z-index: 100;
+            -webkit-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            transition: all 0.4s;
+        }
+        .toTop a{
+            color: #fff;
+            font-size: 48px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        .toTop a:hover{
+            color: indianred;
+        }
+        .toTop .red{
+            color: indianred;
+        }
+        .swiper-container{
+            height: 100%;
+        }
+        .swiper-container .swiper-slide{
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            transition: all 400ms;
+        }
+       /* .one{
+            background: #2bd;
+        }
+        .two{
+            background: #0f0;
+        }
+        .thr{
+            background: #00f;
+        }
+        .fou{
+            background: #fd0;
+        }
+        .fiv{
+            background: #0fd;
+        }
+        .six{
+            background: #fdf;
+        }*/
+    </style>
+</head>
+<body>
+<div id="music">
+    <img src="" alt=""/>
+    <audio id="audio" src=""  >
+        您的浏览器不支持audio标签。
+    </audio>
+    <div class="mover">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+</div>
+<!-- Swiper -->
+<div class="toTop">
+    <a class="icon iconfont" href="javascript:void(0)">&#xe601;</a>
+</div>
+<ul class="nav">
+    <li class="active">
+        <a class="scroll" data-hover="Home">Home</a>
+    </li>
+    <li>
+        <a class="scroll" data-hover="About">About</a>
+    </li>
+    <li>
+        <a class="scroll" data-hover="Skills">Skills</a>
+    </li>
+    <li>
+        <a class="scroll" data-hover="Projects">Projects</a>
+    </li>
+    <li>
+        <a class="scroll" data-hover="Contact">Contact</a>
+    </li>
+    <li>
+        <a class="scroll" data-hover="Find">Find</a>
+    </li>
+</ul>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide one">
+            <div class="pic1">
+                <div class="photo"><img src="img/dog.png" alt=""/></div>
+                <div class="mes">
+                    <p>我叫胡红亮</p>
+                    <p>今年24岁</p>
+                    <p>是一名web前端工程师</p>
+                    <p>18348087819@139.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide two">Slide 2</div>
+        <div class="swiper-slide thr">Slide 3</div>
+        <div class="swiper-slide fou">Slide 4</div>
+        <div class="swiper-slide fiv">Slide 5</div>
+        <div class="swiper-slide six">Slide 6</div>
+        <!--<div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
+        <div class="swiper-slide">Slide 10</div>-->
+    </div>
+    <!-- Add Pagination -->
+   <!-- <div class="swiper-pagination"></div>-->
+</div>
+<!-- Swiper JS -->
+<script src="js/jquery.min.js"></script>
+<script src="swiper/swiper.min.js"></script>
+<!-- Initialize Swiper -->
+
+<script>
+    $(document).ready(function() {
+        var mySwiper = new Swiper(".swiper-container", {
+            speed: 800,
+            direction: "vertical",
+            mousewheelControl: true,
+            paginationClickable: true,
+            pagination: ".swiper-pagination",
+            scrollbar: ".swiper-scrollbar",
+            onSlideChangeEnd: function (swiper) {
+                switch (swiper.activeIndex) {
+                    case 0:
+                        $(".nav li").eq(0).addClass("active").siblings().removeClass("active");
+                        break;
+                    case 1:
+                        $(".nav li").eq(1).addClass("active").siblings().removeClass("active");
+                        break;
+                    case 2:
+                        $(".nav li").eq(2).addClass("active").siblings().removeClass("active");
+                        break;
+                    case 3:
+                        $(".nav li").eq(3).addClass("active").siblings().removeClass("active");
+                        break;
+                    case 4:
+                        $(".nav li").eq(4).addClass("active").siblings().removeClass("active");
+                        break;
+                    case 5:
+                        $(".nav li").eq(5).addClass("active").siblings().removeClass("active");
+                        break;
+                }
+            }
+        });
+        $(".nav li a").click(function () {
+            var _index = $(this).parent().index();
+            mySwiper.slideTo(_index, 800, false);
+            $(this).parent().addClass("active").siblings().removeClass("active");
+        });
+        $(".toTop").click(function () {
+            $(this).find("a").addClass("red").animate({
+                bottom: "1000px"
+            }, 800, function () {
+                $(".toTop a").removeClass("red").css({
+                    bottom: 0
+                });
+            });
+            mySwiper.slideTo(0, 800, false);
+            $(".nav li").eq(0).addClass("active").siblings().removeClass("active");
+        });
+
+    });
+</script>
+<script src="js/resume.js"></script>
+</body>
+</html>
